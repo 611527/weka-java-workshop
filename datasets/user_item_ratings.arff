@@ -1,0 +1,13 @@
+@relation user_item_ratings
+
+@attribute user_id numeric
+@attribute item_id numeric
+@attribute rating numeric
+
+@data
+1,101,4.0
+1,102,3.0
+2,101,5.0
+2,103,2.0
+3,102,4.5
+3,104,3.0

@@ -10,19 +10,22 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("=== Weka Java Workshop ===");
-            System.out.println("1. Classification");
-            System.out.println("2. Regression");
-            System.out.println("3. Clustering");
-            System.out.println("4. Exit");
+            System.out.println("1. Random Forest Classification");
+            System.out.println("2. SMO Classification");
+            System.out.println("3. Regression");
+            System.out.println("4. Clustering");
+            System.out.println("5. Recommendation");
+            System.out.println("6. Exit");
             System.out.print("Choose an option: ");
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 11 -> RandomForestLoginDetection.run();
-                case 12 -> SMOLoginDetection.run();
-                case 2 -> RegressionDemo.run();
-                case 3 -> ClusteringDemo.run();
-                case 4 -> System.exit(0);
+                case 1 -> RandomForestLoginDetection.run();
+                case 2 -> SMOLoginDetection.run();
+                case 3 -> RegressionDemo.run();
+                case 4 -> ClusteringDemo.run();
+                case 5 -> RecommendationDemo.run();
+                case 6 -> System.exit(0);
                 default -> System.out.println("Invalid option.");
             }
             System.out.println();
