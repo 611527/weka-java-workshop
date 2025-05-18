@@ -1,5 +1,8 @@
 package workshop;
 
+import workshop.classification.RandomForestLoginDetection;
+import workshop.classification.SMOLoginDetection;
+
 import java.util.Scanner;
 
 public class Main {
@@ -15,7 +18,8 @@ public class Main {
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 1 -> ClassificationDemo.run();
+                case 11 -> RandomForestLoginDetection.run();
+                case 12 -> SMOLoginDetection.run();
                 case 2 -> RegressionDemo.run();
                 case 3 -> ClusteringDemo.run();
                 case 4 -> System.exit(0);

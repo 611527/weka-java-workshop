@@ -1,0 +1,31 @@
+@relation suspicious_login
+
+@attribute LoginHour numeric
+@attribute IPRegion {US,UK,RU,BR}
+@attribute DeviceType {Desktop,Mobile,Tablet}
+@attribute FailedAttempts numeric
+@attribute AccountAgeDays numeric
+@attribute IsSuspicious {yes,no}
+
+@data
+10,US,Mobile,0,365,no
+2,RU,Desktop,3,2,yes
+18,US,Mobile,1,120,no
+3,BR,Desktop,5,1,yes
+9,UK,Tablet,0,800,no
+1,RU,Mobile,4,0,yes
+15,US,Desktop,2,200,no
+20,UK,Mobile,0,100,no
+5,BR,Tablet,6,30,yes
+12,UK,Desktop,0,500,no
+7,US,Mobile,1,90,no
+4,RU,Tablet,2,1,yes
+8,BR,Desktop,0,300,no
+6,UK,Mobile,3,50,yes
+11,US,Tablet,0,400,no
+13,RU,Desktop,1,10,no
+14,BR,Mobile,0,600,no
+17,UK,Tablet,2,20,yes
+16,US,Desktop,0,700,no
+19,RU,Mobile,5,5,yes
+
