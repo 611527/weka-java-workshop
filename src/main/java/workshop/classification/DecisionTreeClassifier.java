@@ -4,6 +4,10 @@ public class DecisionTreeClassifier {
     public static void run() throws Exception {
         // TODO: Load the dataset (same as RandomForest)
 
+        // TODO : Set class index (last attribute)
+
+        // TODO : Split the dataset into training and testing sets (80% train, 20% test)
+
         // TODO: Initialize the J48 Decision Tree classifier
         // J48 model = new J48();
 
@@ -24,7 +28,7 @@ public class DecisionTreeClassifier {
 
         // TODO: Build the classifier
 
-        // TODO: Evaluate with 20-fold cross-validation
+        // TODO: Evaluate with test data
 
         // TODO: Output evaluation summary and confusion matrix
     }
