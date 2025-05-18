@@ -6,13 +6,13 @@ import weka.core.converters.ConverterUtils.DataSource;
 
 public class RegressionDemo {
     public static void run() throws Exception {
-        Instances data = new DataSource("datasets/housing.arff").getDataSet();
-        data.setClassIndex(data.numAttributes() - 1);
+      //   Instances data = new DataSource("datasets/housing.arff").getDataSet();
+      //   data.setClassIndex(data.numAttributes() - 1);
 
-        LinearRegression model = new LinearRegression();  // TODO: Try SMOreg
-        model.buildClassifier(data);
+      //   LinearRegression model = new LinearRegression();  // TODO: Try SMOreg
+      //   model.buildClassifier(data);
 
-        System.out.println("=== Regression Model ===");
-        System.out.println(model);
+      //   System.out.println("=== Regression Model ===");
+      //   System.out.println(model);
     }
 }

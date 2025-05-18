@@ -20,13 +20,27 @@ public class Main {
             int choice = sc.nextInt();
 
             switch (choice) {
-                case 1 -> RandomForestLoginDetection.run();
-                case 2 -> SMOLoginDetection.run();
-                case 3 -> RegressionDemo.run();
-                case 4 -> ClusteringDemo.run();
-                case 5 -> RecommendationDemo.run();
-                case 6 -> System.exit(0);
-                default -> System.out.println("Invalid option.");
+                case 1:
+                    RandomForestLoginDetection.run();
+                    break;
+                case 2:
+                    SMOLoginDetection.run();
+                    break;
+                case 3:
+                    RegressionDemo.run();
+                    break;
+                case 4:
+                    ClusteringDemo.run();
+                    break;
+                case 5:
+                    RecommendationDemo.run();
+                    break;
+                case 6:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid option.");
+                    break;
             }
             System.out.println();
         }
