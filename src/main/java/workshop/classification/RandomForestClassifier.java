@@ -1,11 +1,9 @@
 package workshop.classification;
 
+import weka.classifiers.Evaluation;
 import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
-import weka.classifiers.Evaluation;
-
-import java.util.Random;
 
 public class RandomForestClassifier {
     public static void run() throws Exception {
@@ -48,10 +46,10 @@ public class RandomForestClassifier {
 //         model.setOptions(options);
 
         // Build model
-        model.buildClassifier(data);
+        model.buildClassifier(trainData);
 
         // Evaluate model
-        Evaluation eval = new Evaluation(data);
+        Evaluation eval = new Evaluation(trainData);
         eval.evaluateModel(model, testData);
 
         // Output results
