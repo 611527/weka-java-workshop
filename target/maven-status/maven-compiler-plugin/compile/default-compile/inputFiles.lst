@@ -1,8 +1,8 @@
-/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/classification/SMOLoginDetection.java
 /Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/ClassificationDemo.java
-/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/Main.java
 /Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/ClusteringDemo.java
-/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/classification/RandomForestLoginDetection.java
+/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/Main.java
 /Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/RecommendationDemo.java
-/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/classification/Utils.java
 /Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/RegressionDemo.java
+/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/classification/RandomForestLoginDetection.java
+/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/classification/SMOLoginDetection.java
+/Users/alandehaas/Desktop/weka-java-workshop/src/main/java/workshop/classification/Utils.java

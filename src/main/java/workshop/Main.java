@@ -1,17 +1,17 @@
 package workshop;
 
-import workshop.classification.RandomForestLoginDetection;
-import workshop.classification.SMOLoginDetection;
-
 import java.util.Scanner;
+
+import workshop.classification.RandomForestClassifier;
+import workshop.classification.DecisionTreeClassifier;
 
 public class Main {
     public static void main(String[] args) throws Exception {
         Scanner sc = new Scanner(System.in);
         while (true) {
             System.out.println("=== Weka Java Workshop ===");
-            System.out.println("1. Random Forest Classification");
-            System.out.println("2. SMO Classification");
+            System.out.println("1. Classification: Random Forest");
+            System.out.println("2. Classification: Decision Tree");
             System.out.println("3. Regression");
             System.out.println("4. Clustering");
             System.out.println("5. Recommendation");
@@ -21,10 +21,10 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    RandomForestLoginDetection.run();
+                    RandomForestClassifier.run();
                     break;
                 case 2:
-                    SMOLoginDetection.run();
+                    DecisionTreeClassifier.run();
                     break;
                 case 3:
                     RegressionDemo.run();

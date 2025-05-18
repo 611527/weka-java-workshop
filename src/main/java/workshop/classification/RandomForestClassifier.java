@@ -1,13 +1,13 @@
 package workshop.classification;
 
+import weka.classifiers.trees.RandomForest;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
-import weka.classifiers.trees.RandomForest;
 import weka.classifiers.Evaluation;
 
 import java.util.Random;
 
-public class RandomForestLoginDetection {
+public class RandomForestClassifier {
     public static void run() throws Exception {
         // Load dataset
         DataSource source = new DataSource("datasets/suspicious_login.arff");
@@ -20,16 +20,16 @@ public class RandomForestLoginDetection {
 
         // TODO: Optional parameter configurations
 
-        // Option Set 1: Small forest, shallow trees (fast, possibly underfits)
+        // Option Set 1: Small forest (number of trees to 10), shallow trees (max tree depth, fast, possibly underfits)
         // String[] options = weka.core.Utils.splitOptions("-I 10 -depth 5");
         // model.setOptions(options);
 
         // Option Set 2: Medium forest, limit depth (balanced)
-        // String[] options = weka.core.Utils.splitOptions("-I 50 -depth 10 -K 3 -S 42");
+        // String[] options = weka.core.Utils.splitOptions("-I 50 -depth 10");
         // model.setOptions(options);
 
         // Option Set 3: Large forest, deeper trees (slower, possibly overfits small data)
-        // String[] options = weka.core.Utils.splitOptions("-I 200 -depth 20 -K 0 -S 1");
+        // String[] options = weka.core.Utils.splitOptions("-I 200 -depth 20");
         // model.setOptions(options);
 
         // Build model
