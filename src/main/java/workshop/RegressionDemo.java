@@ -24,21 +24,46 @@ public class RegressionDemo {
         Instances data = source.getDataSet();
         data.setClassIndex(data.numAttributes() - 1); // Last column = target
 
+        // === NEW SECTION: Split dataset into train and test sets ===
+        data.randomize(new Random(1)); // Ensure random order
+
+        int trainSize = (int) Math.round(data.numInstances() * 0.8);
+        int testSize = data.numInstances() - trainSize;
+
+        Instances train = new Instances(data, 0, trainSize);
+        Instances test = new Instances(data, trainSize, testSize);
+
         //Step 2: Train a Linear Regression model
         LinearRegression model = new LinearRegression();
-        model.buildClassifier(data);
+        model.buildClassifier(train); // Now trained only on train set
 
-        //Step 3: Evaluate using 10-fold cross-validatio
-        Evaluation eval = new Evaluation(data);
-        eval.crossValidateModel(model, data, 10, new Random(1));
+        //Step 3: Evaluate using 10-fold cross-validation (still on full data)
+        Evaluation eval = new Evaluation(train);
+        eval.crossValidateModel(model, train, 10, new Random(1));
 
         //Step 4: Output model equation & metrics
         System.out.println("\n=== Linear Regression Model (weights) ===");
         System.out.println(model);  // Method 1: Look at large coefficients
 
-        System.out.println("\n=== Evaluation ===");
+        System.out.println("\n=== Evaluation on Training Set ===");
         System.out.println(eval.toSummaryString());
 
+        // === NEW SECTION: Evaluate on the separate test set ===
+        Evaluation testEval = new Evaluation(train);
+        testEval.evaluateModel(model, test);
+
+        System.out.println("\n=== Evaluation on Test Set (hold-out) ===");
+        System.out.println(testEval.toSummaryString());
+
+        // === NEW SECTION: Predicted vs Actual on test set ===
+        System.out.println("\n=== Predicted vs Actual (first 20 test instances) ===");
+        for (int i = 0; i < Math.min(20, test.numInstances()); i++) {
+            Instance inst = test.instance(i);
+            double actual = inst.classValue();
+            double predicted = model.classifyInstance(inst);
+            System.out.printf("Instance %2d: Predicted = %.2f, Actual = %.2f\n", i + 1, predicted, actual);
+        }
+        //“Looking at these predictions, where do you think the model did well? Where did it fail?”
         //Method 2: Rank features by correlation with target
         //Uncomment this block to try:
         /*
@@ -90,6 +115,15 @@ public class RegressionDemo {
 
         double predicted = model.classifyInstance(newItem);
         System.out.printf("\nPredicted Item_Outlet_Sales: %.2f\n", predicted);
+
+        newItem.setValue(data.attribute("Item_MRP"), 50.0);  // Low price
+        double lowPricePrediction = model.classifyInstance(newItem);
+
+        newItem.setValue(data.attribute("Item_MRP"), 300.0); // High price
+        double highPricePrediction = model.classifyInstance(newItem);
+
+        System.out.printf("Low MRP Prediction: %.2f\n", lowPricePrediction);
+        System.out.printf("High MRP Prediction: %.2f\n", highPricePrediction);
 
         // === TODO 1: Change Item_MRP to 50.0 or 300.0 and observe change ===
         // newItem.setValue(data.attribute("Item_MRP"), 300.0);
